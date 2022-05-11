@@ -6,7 +6,6 @@ import Card from "../UI/Card";
 function ExpenseItem(props: { date: Date; title: string; amount: number }) {
   const [title,setTitle] =useState(props.title);
   const clickHandler = () => {
-    setTitle("prova");
     console.log(title);
   };
   return (
