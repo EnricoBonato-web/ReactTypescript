@@ -1,6 +1,6 @@
-import ExpenseDiv from "./components/Expenses";
+import ExpenseDiv from "./components/Expenses/Expenses";
 
-function App() {
+const App = () => {
   const expenses = [
     {
       id: "e1",
@@ -29,6 +29,6 @@ function App() {
       <ExpenseDiv {...expenses} />
     </div>
   );
-}
+};
 
 export default App;
