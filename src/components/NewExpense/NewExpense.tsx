@@ -1,15 +1,16 @@
-import React from "react";
+import React from 'react';
+import { isPropertySignature } from 'typescript';
 
-import ExpenseForm from "./ExpenseForm";
-import "./NewExpense.css";
+import ExpenseForm from './ExpenseForm';
+import './NewExpense.css';
 
-const NewExpense = () => {
-  const onSaveExpenseData = (enteredExpenseData:{title:string,amount:number,data:Date}) => {
-    const expenseData={
+const NewExpense = (props:any) => {
+  const onSaveExpenseData = (enteredExpenseData: { title: string; amount: number; data: Date }) => {
+    const expenseData = {
       ...enteredExpenseData,
-      id:Math.random().toString()
-
-    }
+      id: Math.random().toString(),
+    };
+    props.onAddExpense(expenseData);
   };
 
   return (
