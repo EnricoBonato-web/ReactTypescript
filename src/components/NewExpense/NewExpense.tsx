@@ -1,10 +1,8 @@
 import React from 'react';
-import { isPropertySignature } from 'typescript';
-
 import ExpenseForm from './ExpenseForm';
 import './NewExpense.css';
 
-const NewExpense = (props:any) => {
+const NewExpense = (props: any) => {
   const onSaveExpenseData = (enteredExpenseData: { title: string; amount: number; data: Date }) => {
     const expenseData = {
       ...enteredExpenseData,

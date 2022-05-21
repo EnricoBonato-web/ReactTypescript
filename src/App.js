@@ -31,7 +31,6 @@ const App = () => {
     <div>
       <h2>Let's get started!</h2>
       <NewExpense onAddExpense={addExpenseHandler} />
-      <ExpensesFilter/>
       <ExpenseDiv {...expenses} />
     </div>
   );
