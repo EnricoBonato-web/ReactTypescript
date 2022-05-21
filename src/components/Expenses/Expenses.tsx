@@ -6,10 +6,13 @@ import ExpensesFilter from './ExpenseFilter';
 import ExpenseData from './ExpenseType';
 
 function Expenses(props: ExpenseData[]) {
+  console.log(props);
   const [filteredYear, setFilteredYear] = useState('2020');
   let expenses: ExpenseData[] = [];
-  for (let i = 0; i < Object.keys(props).length; i++) { //TODO not the best but works
+  for (let i = 0; i < Object.keys(props).length; i++) {
+    //TODO not the best but works
     expenses.push(props[i] as ExpenseData);
+    console.log(props[i]);
   }
   const filteredChangeHandler = (selectedYear: string) => {
     setFilteredYear(selectedYear);
