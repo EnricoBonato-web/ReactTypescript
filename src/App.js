@@ -23,15 +23,25 @@ const DUMMY_EXPANSES = [
   },
 ];
 const App = () => {
- const[expenses,setExpenses]= useState(DUMMY_EXPANSES) 
+  const [expenses, setExpenses] = useState(DUMMY_EXPANSES);
   const addExpenseHandler = expense => {
-    setExpenses(prevExpenses=>{return[expense,...prevExpenses]})
+    setExpenses(prevExpenses => {
+      return [expense, ...prevExpenses];
+    });
+  };
+  const filterYearHandler = filterYear => {
+    setExpenses(prevExpenses => {
+      return prevExpenses.filter(expense => {
+        console.log(expense.date.getFullYear() +"==="+ filterYear);
+        return expense.date.getFullYear() == filterYear;
+      });
+    });
   };
   return (
     <div>
       <h2>Let's get started!</h2>
       <NewExpense onAddExpense={addExpenseHandler} />
-      <ExpenseDiv {...expenses} />
+      <ExpenseDiv onFilterYear={filterYearHandler} {...expenses} />
     </div>
   );
 };
