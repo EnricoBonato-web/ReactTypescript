@@ -4,10 +4,11 @@ import ExpenseItem from './ExpenseItem';
 import Card from '../UI/Card';
 import ExpensesFilter from './ExpenseFilter';
 import ExpenseType from './ExpenseType';
+import ExpensesList from './ExpensesList';
 
 function Expenses(props: ExpenseType[]) {
-  const [filteredYear, setFilteredYear] = useState("2020");
-  let expenses = Object.values(props).filter((prop: ExpenseType) => {
+  const [filteredYear, setFilteredYear] = useState('2020');
+  let filteredExpenses = Object.values(props).filter((prop: ExpenseType) => {
     return prop.date.getFullYear() === +filteredYear ? 1 : 0;
   });
   const filteredChangeHandler = (selectedYear: string) => {
@@ -16,10 +17,7 @@ function Expenses(props: ExpenseType[]) {
   return (
     <Card className="expenses">
       <ExpensesFilter selected={filteredYear} onChangeFilter={filteredChangeHandler} />
-
-      {expenses.map((prop: ExpenseType) => {
-        return <ExpenseItem key={prop.id} {...prop} />;
-      })}
+      <ExpensesList items={filteredExpenses}/>
     </Card>
   );
 }
