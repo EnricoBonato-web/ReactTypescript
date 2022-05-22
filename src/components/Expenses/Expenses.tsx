@@ -6,18 +6,12 @@ import ExpensesFilter from './ExpenseFilter';
 import ExpenseType from './ExpenseType';
 
 function Expenses(props: ExpenseType[]) {
-  //ExpenseType[]&()=>{}
-  const [filteredYear, setFilteredYear] = useState('2020');
-  const [expenses, setExpenses] = useState<ExpenseType[]>([]);
+  const [filteredYear, setFilteredYear] = useState("2020");
+  let expenses = Object.values(props).filter((prop: ExpenseType) => {
+    return prop.date.getFullYear() === +filteredYear ? 1 : 0;
+  });
   const filteredChangeHandler = (selectedYear: string) => {
     setFilteredYear(selectedYear);
-    setExpenses([]);
-    for (let i = 0; i < Object.keys(props).length; i++) {
-      if (props[i].date.getFullYear() === +filteredYear)
-        setExpenses(oldExpenses => {
-          return [props[i], ...oldExpenses];
-        });
-    }
   };
   return (
     <Card className="expenses">
