@@ -29,19 +29,11 @@ const App = () => {
       return [expense, ...prevExpenses];
     });
   };
-  const filterYearHandler = filterYear => {
-    setExpenses(prevExpenses => {
-      return prevExpenses.filter(expense => {
-        console.log(expense.date.getFullYear() +"==="+ filterYear);
-        return expense.date.getFullYear() == filterYear;
-      });
-    });
-  };
   return (
     <div>
       <h2>Let's get started!</h2>
       <NewExpense onAddExpense={addExpenseHandler} />
-      <ExpenseDiv onFilterYear={filterYearHandler} {...expenses} />
+      <ExpenseDiv {...expenses} />
     </div>
   );
 };
