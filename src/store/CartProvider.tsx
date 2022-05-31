@@ -16,6 +16,7 @@ const cartReducer = (state: any, action: any) => {
       state.totalAmount + action.item.price * action.item.amount;
     return { item: updatedItems, updatedTotalAmount };
   }
+  return defaultCartState;
 };
 const CartProvider = (props: any) => {
   console.log("contestocreato")
