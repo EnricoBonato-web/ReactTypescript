@@ -1,6 +1,7 @@
 import React from "react";
 import classes from "./Cart.module.css";
 import Modal from "../UI/Modal";
+
 const Cart = (props: any) => {
   const cartItems = [{ id: "c1", name: "sushi", amount: 2, price: 12.99 }].map(
     (item) => <li>{item.name}</li>
