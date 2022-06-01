@@ -3,8 +3,7 @@ import CartIcon from '../Cart/CartIcon';
 import classes from './HeaderCartButton.module.css';
 import CartContext from '../../store/cart-context';
 
-const HeaderCartButton = (props: any) => {
-  //TODO Any
+const HeaderCartButton = (props: {onClick:()=>{}}) => {
   const [btnIsHighlighted, setBtnIsHighlighted] = useState(false);
   const cartCtx = useContext(CartContext);
   const { items } = cartCtx;

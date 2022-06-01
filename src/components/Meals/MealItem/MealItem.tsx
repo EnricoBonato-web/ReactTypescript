@@ -3,8 +3,9 @@ import { useContext } from 'react';
 import classes from './MealItem.module.css';
 import MealItemForm from './MealItemForm';
 import CartContext from '../../../store/cart-context';
+import CartItem from '../../../types/CartItem';
 
-const MealItems = (props: any) => {
+const MealItems = (props: CartItem) => {
   const cartCtx = useContext<any>(CartContext);
 
   const price = `$${props.price.toFixed(2)}`;

@@ -8,6 +8,8 @@ const ADD_CART_ITEM: string = 'ADD_CART_ITEM';
 const defaultCartState: CartType = {
   items: [],
   totalAmount: 0,
+  addItem:()=>{},
+  removeItem:()=>{},
 };
 const cartReducer = (state: any, action: any) => {
   let updatedItems: CartItem[];
