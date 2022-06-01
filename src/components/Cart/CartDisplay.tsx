@@ -2,6 +2,7 @@ import React from 'react';
 import classes from './CartDisplay.module.css';
 
 const CartDisplay = (props: any) => {
+  console.log(props);
   const price = `$${props.price.toFixed(2)}`;
 
   return (

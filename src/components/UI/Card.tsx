@@ -1,10 +1,8 @@
-import React, { ReactElement } from "react";
-import { ReactNode } from "react";
-import classes from "./Card.module.css";
+import React from 'react';
+import classes from './Card.module.css';
 
-const Card = (props:any) => {
-    //TODO Any
-return <div className={classes.card}>{props.children}</div>
-
+const Card = (props: any) => {
+  //TODO Any
+  return <div className={classes.card}>{props.children}</div>;
 };
 export default Card;
