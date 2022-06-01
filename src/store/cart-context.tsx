@@ -1,6 +1,6 @@
-import React from "react";
-import CartItem from "../types/CartItem";
-import CartType from "../types/CartType";
+import React from 'react';
+import CartItem from '../types/CartItem';
+import CartType from '../types/CartType';
 const example: CartItem[] = [];
 const CartContext = React.createContext({
   items: example,
