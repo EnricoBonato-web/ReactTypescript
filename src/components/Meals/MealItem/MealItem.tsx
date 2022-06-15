@@ -8,8 +8,9 @@ import CartItem from '../../../types/CartItem';
 const MealItems = (props: CartItem) => {
   const cartCtx = useContext<any>(CartContext);
 
+  console.log(props.price)
+  console.log(props)
   const price = `$${props.price.toFixed(2)}`;
-
   const addToCartHandler = (amount: any) => {
     cartCtx.addItem({
       id: props.id,
