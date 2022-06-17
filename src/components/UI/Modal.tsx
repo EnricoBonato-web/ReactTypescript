@@ -12,7 +12,9 @@ const ModalOverlay = (props: any) => {
   );
 };
 const portalElement = document.getElementById("overlays");
-const Modal = (props: any) => {
+const Modal: React.FC<{ children: React.ReactNode; onClose: () => {} }> = (
+  props: any
+) => {
   return (
     <Fragment>
       {ReactDOM.createPortal(
