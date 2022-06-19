@@ -4,7 +4,7 @@ import classes from "./Modal.module.css";
 const Backdrop = (props: any) => {
   return <div className={classes.backdrop} onClick={props.onClose}></div>;
 };
-const ModalOverlay = (props: any) => {
+const ModalOverlay = (props: { children: React.ReactNode }) => {
   return (
     <div className={classes.modal}>
       <div className={classes.content}>{props.children}</div>
@@ -13,7 +13,7 @@ const ModalOverlay = (props: any) => {
 };
 const portalElement = document.getElementById("overlays");
 const Modal: React.FC<{ children: React.ReactNode; onClose: () => {} }> = (
-  props: any
+  props
 ) => {
   return (
     <Fragment>

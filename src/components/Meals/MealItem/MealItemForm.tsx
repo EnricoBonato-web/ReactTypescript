@@ -6,7 +6,7 @@ const MealItemForm = (props: any) => {
   const [amountIsValid, setAmountIsValid] = useState(true);
   const amountInputRef = useRef<any>();
 
-  const submitHandler = (event: any) => {
+  const submitHandler = (event:React.FormEvent<HTMLFormElement> ) => {
     event.preventDefault();
 
     const enteredAmount = amountInputRef.current?amountInputRef.current.value:'';

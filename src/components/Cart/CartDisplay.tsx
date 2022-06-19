@@ -1,6 +1,7 @@
 import React from 'react';
 import classes from './CartDisplay.module.css';
 
+
 const CartDisplay = (props: any) => {
   const price = `$${props.price.toFixed(2)}`;
 
@@ -20,5 +21,4 @@ const CartDisplay = (props: any) => {
     </li>
   );
 };
-
 export default CartDisplay;
