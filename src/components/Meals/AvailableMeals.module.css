@@ -14,6 +14,9 @@
   color: white;
   text-align: center;
 }
+.MealsError{
+  color: red;
+  text-align: center;}
 @keyframes meals-appear {
   from {
     opacity: 0;

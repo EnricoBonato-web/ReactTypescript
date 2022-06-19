@@ -7,14 +7,18 @@ import classes from "./AvailableMeals.module.css";
 const AvailableMeals = () => {
   const [meals, setMeals] = useState<MealItem[]>([]);
   const [isLoading, setIsLoading] = useState(false);
+  const [httpError, setHttpError] = useState();
 
   useEffect(() => {
     const fetchedMeals = async () => {
       setIsLoading(true);
-      console.log(process.env.REACT_APP_FireBase);
       const response = await fetch(process.env.REACT_APP_FireBase!);
+      if (!response.ok) {
+        throw new Error("Something went very very wrong");
+      }
       const responseData = await response.json();
       const loadedMeals: MealItem[] = [];
+
       for (const key in responseData) {
         loadedMeals.push({
           id: key,
@@ -26,8 +30,19 @@ const AvailableMeals = () => {
       setMeals(loadedMeals);
       setIsLoading(false);
     };
-    fetchedMeals();
+
+    fetchedMeals().catch((error) => {
+      setIsLoading(false);
+      setHttpError(error.message);
+    });
   }, []);
+  if (httpError) {
+    return (
+      <section className={classes.MealsError}>
+        <p>{httpError}</p>
+      </section>
+    );
+  }
   if (isLoading) {
     return (
       <section className={classes.MealsLoading}>
