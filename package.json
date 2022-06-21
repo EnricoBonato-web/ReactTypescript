@@ -1,0 +1,25 @@
+{
+  "name": "reacttypescript",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EnricoBonatoBan/ReactTypescript.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/EnricoBonatoBan/ReactTypescript/issues"
+  },
+  "homepage": "https://github.com/EnricoBonatoBan/ReactTypescript#readme",
+  "dependencies": {
+    "@reduxjs/toolkit": "^1.8.2",
+    "react-redux": "^8.0.2",
+    "redux": "^4.2.0"
+  }
+}
